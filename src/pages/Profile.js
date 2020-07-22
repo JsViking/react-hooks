@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, Fragment } from 'react'
 import { Link } from 'react-router-dom'
+import { Repos } from '../components/Repos'
 import { GithubContext } from '../context/github/githubContext'
 
 export default ({match}) => {
@@ -64,12 +65,11 @@ export default ({match}) => {
                 <div className="badge badge-success mr-2">Подписан: {following}</div>
                 <div className="badge badge-info mr-2">Репозитории: {public_repos}</div>
                 <div className="badge badge-dark mr-2">Gists: {public_gists}</div>
-
-                { repos.join(' ') }
             </div>
           </div>
         </div>
       </div>
+      { <Repos repos={repos} /> }
     </Fragment>
   )
 }
